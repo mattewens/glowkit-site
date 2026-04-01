@@ -3,88 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowKit — TikTok Content Preview</title>
+    <title>GlowKit — TikTok Content v2</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, sans-serif; background: #1a1025; color: #e0d0f0; padding: 24px; }
+        body { font-family: -apple-system, sans-serif; background: #0a0612; color: #e0d0f0; padding: 24px; }
         h1 { text-align: center; font-size: 1.8rem; color: #c4a0f0; margin-bottom: 8px; }
-        .subtitle { text-align: center; color: #8a7094; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #2d2035; border-radius: 16px; overflow: hidden; }
-        .card video { width: 100%; max-height: 500px; object-fit: contain; background: #000; }
+        .subtitle { text-align: center; color: #6a5a74; margin-bottom: 40px; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #1a1025; border-radius: 16px; overflow: hidden; border: 1px solid #2d2035; }
+        .card video { width: 100%; max-height: 520px; object-fit: contain; background: #000; }
         .card-body { padding: 16px; }
-        .card-title { font-size: 1.1rem; font-weight: 600; color: #d4b8e8; margin-bottom: 8px; }
-        .caption { font-size: 0.85rem; color: #a090b0; line-height: 1.5; white-space: pre-wrap; }
-        .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-bottom: 8px; }
-        .badge-curiosity { background: #6b2fa033; color: #b88df0; }
-        .badge-pain { background: #f0303033; color: #f09090; }
-        .badge-bold { background: #f0a03033; color: #f0c870; }
-        .badge-list { background: #30f06033; color: #90f0b0; }
-        .badge-transform { background: #3060f033; color: #90b0f0; }
+        .card-title { font-size: 1.05rem; font-weight: 600; color: #d4b8e8; margin-bottom: 8px; }
+        .caption { font-size: 0.8rem; color: #8a7a94; line-height: 1.5; white-space: pre-wrap; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-bottom: 8px; margin-right: 4px; }
+        .v2 { background: #6b2fa033; color: #b88df0; }
+        .hook-type { background: #ffffff10; color: #a090b0; }
+        .section { text-align: center; margin: 48px 0 24px; }
+        .section h2 { color: #8a6ab0; font-size: 1.2rem; }
+        .section p { color: #5a4a64; font-size: 0.85rem; }
     </style>
 </head>
 <body>
     <h1>GlowKit TikTok Content</h1>
-    <p class="subtitle">Preview — ready to schedule for Friday April 3rd</p>
+    <p class="subtitle">v2 — dark, native, adult voice (Aria) — ready for Friday Apr 3</p>
+
     <div class="grid">
         <div class="card">
-            <video controls preload="metadata">
-                <source src="checklist_reveal.mp4" type="video/mp4">
-            </video>
+            <video controls preload="metadata"><source src="v2_checklist.mp4" type="video/mp4"></video>
             <div class="card-body">
-                <span class="badge badge-curiosity">Curiosity Hook</span>
-                <div class="card-title">1. Morning Routine Checklist</div>
-                <div class="caption">the app that girl influencers won't tell you about
+                <span class="badge v2">v2</span><span class="badge hook-type">Curiosity</span>
+                <div class="card-title">1. Satisfying Routine Checkoff</div>
+                <div class="caption">the app nobody talks about but every that girl uses
 
-#glowup #thatgirl #morningroutine #selfcare #glowkit #routine #aesthetic</div>
+#glowup #thatgirl #morningroutine #selfcare #glowkit #routine #aesthetic #fyp</div>
             </div>
         </div>
+
         <div class="card">
-            <video controls preload="metadata">
-                <source src="before_after.mp4" type="video/mp4">
-            </video>
+            <video controls preload="metadata"><source src="v2_before_after.mp4" type="video/mp4"></video>
             <div class="card-body">
-                <span class="badge badge-transform">Transformation</span>
+                <span class="badge v2">v2</span><span class="badge hook-type">Transformation</span>
                 <div class="card-title">2. Day 1 vs Day 30</div>
-                <div class="caption">day 1 vs day 30 of using GlowKit
+                <div class="caption">day 1 vs day 30 of tracking my glow-up
 
-#glowup #transformation #beforeandafter #thatgirl #selfcare #glowkit</div>
+the difference is actually insane
+
+#glowup #transformation #beforeandafter #thatgirl #selfcare #glowkit #fyp</div>
             </div>
         </div>
-        <div class="card">
-            <video controls preload="metadata">
-                <source src="five_things.mp4" type="video/mp4">
-            </video>
-            <div class="card-body">
-                <span class="badge badge-list">List Hook</span>
-                <div class="card-title">3. 5 Things That Girl Does</div>
-                <div class="caption">5 things i do every morning to feel like THAT girl
 
-#thatgirl #morningroutine #glowup #selfcare #healthyhabits #glowkit #routine</div>
+        <div class="card">
+            <video controls preload="metadata"><source src="v2_five_things.mp4" type="video/mp4"></video>
+            <div class="card-body">
+                <span class="badge v2">v2</span><span class="badge hook-type">List</span>
+                <div class="card-title">3. 5 Non-Negotiables</div>
+                <div class="caption">5 non-negotiables in my morning routine
+
+number 5 is the game changer
+
+#thatgirl #morningroutine #glowup #selfcare #healthyhabits #glowkit #fyp</div>
             </div>
         </div>
-        <div class="card">
-            <video controls preload="metadata">
-                <source src="pain_point.mp4" type="video/mp4">
-            </video>
-            <div class="card-body">
-                <span class="badge badge-pain">Pain Point</span>
-                <div class="card-title">4. Why Your Routine Fails</div>
-                <div class="caption">your glow-up keeps failing because you're not tracking it
 
-#glowup #routine #selfcare #thatgirl #habits #glowkit #accountability</div>
+        <div class="card">
+            <video controls preload="metadata"><source src="v2_pain_point.mp4" type="video/mp4"></video>
+            <div class="card-body">
+                <span class="badge v2">v2</span><span class="badge hook-type">Pain Point</span>
+                <div class="card-title">4. Why Your Glow-Up Fails</div>
+                <div class="caption">why your glow-up keeps failing
+
+hard truth you need to hear
+
+#glowup #routine #selfcare #thatgirl #habits #glowkit #accountability #fyp</div>
             </div>
         </div>
+
         <div class="card">
-            <video controls preload="metadata">
-                <source src="aesthetic_reveal.mp4" type="video/mp4">
-            </video>
+            <video controls preload="metadata"><source src="v2_aesthetic.mp4" type="video/mp4"></video>
             <div class="card-body">
-                <span class="badge badge-bold">Bold Claim</span>
+                <span class="badge v2">v2</span><span class="badge hook-type">Bold Claim</span>
                 <div class="card-title">5. Aesthetic App Reveal</div>
-                <div class="caption">this free app replaced my $200 planner
+                <div class="caption">the most aesthetic routine app i've ever used
 
-#aesthetic #thatgirl #glowup #selfcare #cleangirl #softgirl #glowkit</div>
+and it's free??
+
+#aesthetic #thatgirl #glowup #selfcare #cleangirl #softgirl #glowkit #fyp</div>
             </div>
         </div>
     </div>
