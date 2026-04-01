@@ -1,19 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlowKit</title>
-<style>
-  body { font-family: -apple-system, sans-serif; background: #0D0D1A; color: #e8e8f0; max-width: 600px; margin: 0 auto; padding: 40px 20px; }
-  h1 { color: #E8A0BF; } h2 { color: #957DAD; margin-top: 32px; } p, li { line-height: 1.7; color: #A0A0B8; }
-  a { color: #E8A0BF; } .footer { margin-top: 60px; font-size: 12px; color: #6B6B80; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowKit — Daily Glow Up Tracker</title>
+    <meta name="description" content="The aesthetic daily routine tracker. Build custom routines, track streaks, and watch your Glow Score rise.">
+    <meta property="og:title" content="GlowKit — Daily Glow Up Tracker">
+    <meta property="og:description" content="The aesthetic daily routine tracker for your glow-up journey.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mattewens.github.io/glowkit-site/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #2d2035;
+            background: #faf8fc;
+            overflow-x: hidden;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px;
+            background: linear-gradient(160deg, #e8d5f5 0%, #f5d5e0 40%, #fce4ec 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(200,160,230,0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+        .logo-text {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.5rem;
+            color: #6b2fa0;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #7a4d8f;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a3458;
+            margin-bottom: 48px;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #9b59b6, #e07098);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(155, 89, 182, 0.45);
+        }
+
+        .app-store-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #9a7baa;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            color: #6b2fa0;
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 36px 28px;
+            box-shadow: 0 2px 16px rgba(107, 47, 160, 0.06);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover { transform: translateY(-4px); }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #2d2035;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #6a5a75;
+        }
+
+        /* Premium */
+        .premium {
+            padding: 100px 24px;
+            background: linear-gradient(160deg, #f3e8fa 0%, #fce4ec 100%);
+            text-align: center;
+        }
+
+        .premium h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            color: #6b2fa0;
+            margin-bottom: 16px;
+        }
+
+        .premium-subtitle {
+            font-size: 1.05rem;
+            color: #7a4d8f;
+            margin-bottom: 40px;
+        }
+
+        .premium-features {
+            max-width: 480px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .premium-features li {
+            list-style: none;
+            padding: 12px 0;
+            font-size: 1rem;
+            color: #4a3458;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.1);
+        }
+
+        .premium-features li::before {
+            content: '\2713';
+            color: #9b59b6;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #6b2fa0;
+            margin-bottom: 8px;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #9a7baa;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            background: #2d2035;
+            color: #c4b0d0;
+        }
+
+        footer a {
+            color: #d4b8e8;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover { color: white; }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: #8a7494;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .logo-text { font-size: 2.5rem; }
+            .tagline { font-size: 1.05rem; }
+            .features h2, .premium h2 { font-size: 1.8rem; }
+            .feature-grid { gap: 24px; }
+        }
+    </style>
 </head>
 <body>
-<h1>✨ GlowKit</h1>
-<p>The aesthetic daily routine tracker.</p>
-<p><a href="/privacy">Privacy Policy</a> · <a href="/support">Support</a></p>
-<div class="footer">© 2026 GlowKit. All rights reserved.</div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-text">GlowKit</div>
+            <p class="tagline">The aesthetic daily routine tracker</p>
+            <p class="hero-description">
+                Build custom routines tailored to your vibe. Track your streaks.
+                Watch your Glow Score rise as you become the best version of yourself.
+            </p>
+            <a href="#" class="cta-button">Download on the App Store</a>
+            <p class="app-store-note">Free with optional premium. iOS only.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Everything you need to glow up</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">&#9728;</span>
+                <h3>Custom Routines</h3>
+                <p>Morning, evening, or anything in between. Build routines around skincare, fitness, mindfulness, study, nutrition, or full glam.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">&#128293;</span>
+                <h3>Streak Tracking</h3>
+                <p>Stay consistent and watch your streaks grow. Every day you show up, your streak gets stronger.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">&#128200;</span>
+                <h3>Glow Score</h3>
+                <p>Your personal glow metric. A daily score based on routine completion that tracks your consistency over time.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">&#128203;</span>
+                <h3>Weekly Reports</h3>
+                <p>Beautiful weekly breakdowns of your habits, streaks, and scores. Perfect for tracking your progress.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">&#127912;</span>
+                <h3>Aesthetic Themes</h3>
+                <p>Clean Girl, Soft Girl, Dark Femme, and seasonal drops throughout the year. Make the app yours.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">&#128276;</span>
+                <h3>Smart Reminders</h3>
+                <p>Gentle nudges to keep you on track. Set custom reminder times for each routine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="premium">
+        <h2>GlowKit Premium</h2>
+        <p class="premium-subtitle">Unlock your full glow-up potential</p>
+        <ul class="premium-features">
+            <li>Unlimited routines</li>
+            <li>Weekly Glow Reports</li>
+            <li>Streak Glow Saves</li>
+            <li>All themes and seasonal drops</li>
+            <li>Community routine imports</li>
+            <li>Deep glow score insights</li>
+            <li>Monthly glow-up challenges</li>
+        </ul>
+        <div class="price-tag">$4.99/month</div>
+        <p class="price-note">3-day free trial. Cancel anytime.</p>
+    </section>
+
+    <footer>
+        <div class="footer-brand">GlowKit</div>
+        <div>
+            <a href="/glowkit-site/privacy.html">Privacy Policy</a>
+            <a href="/glowkit-site/support.html">Support</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 GlowKit. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
