@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build a Skincare Routine — GlowKit Guide</title>
+    <meta name="description" content="Learn how to build a skincare routine that actually works. Step-by-step guide covering cleansing, toning, serums, moisturizing, and SPF — plus how to track your progress.">
+    <meta property="og:title" content="How to Build a Skincare Routine — GlowKit Guide">
+    <meta property="og:description" content="Step-by-step guide to building a skincare routine that works for your skin type. Cleanse, tone, treat, moisturize, protect.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://myglowkit.app/skincare-routine-guide.html">
+    <link rel="canonical" href="https://myglowkit.app/skincare-routine-guide.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2d2035; background: #faf8fc; overflow-x: hidden; }
+        
+        /* Nav */
+        nav { padding: 20px 24px; background: linear-gradient(160deg, #e8d5f5 0%, #f5d5e0 40%, #fce4ec 100%); text-align: center; }
+        nav a { color: #6b2fa0; text-decoration: none; font-family: 'DM Serif Display', serif; font-size: 1.5rem; }
+        
+        /* Hero */
+        .article-hero {
+            padding: 80px 24px 60px;
+            background: linear-gradient(160deg, #e8d5f5 0%, #f5d5e0 40%, #fce4ec 100%);
+            text-align: center;
+            position: relative;
+        }
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .article-hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            color: #6b2fa0;
+            margin-bottom: 16px;
+            position: relative; z-index: 1;
+        }
+        .article-hero .subtitle {
+            font-size: 1.15rem;
+            color: #7a4d8f;
+            max-width: 560px;
+            margin: 0 auto;
+            position: relative; z-index: 1;
+            line-height: 1.6;
+        }
+        
+        /* Content */
+        .article-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .article-content h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: #6b2fa0;
+            margin: 48px 0 16px;
+        }
+        .article-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a3458;
+            margin: 32px 0 12px;
+        }
+        .article-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a3458;
+            margin-bottom: 20px;
+        }
+        .article-content ul, .article-content ol {
+            margin: 0 0 20px 24px;
+            color: #4a3458;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .article-content a { color: #9b59b6; text-decoration: underline; }
+        .article-content a:hover { color: #6b2fa0; }
+        
+        /* Step cards */
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 28px;
+            margin: 24px 0;
+            box-shadow: 0 2px 16px rgba(107, 47, 160, 0.06);
+        }
+        .step-card .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #9b59b6, #e07098);
+            color: white;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .step-card h3 { margin-top: 0; }
+        
+        /* CTA */
+        .cta-section {
+            padding: 80px 24px;
+            background: linear-gradient(160deg, #f3e8fa 0%, #fce4ec 100%);
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: #6b2fa0;
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            font-size: 1.05rem;
+            color: #7a4d8f;
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #9b59b6, #e07098);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(155, 89, 182, 0.45);
+        }
+        
+        /* Internal links */
+        .related-articles {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+        .related-articles h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            color: #6b2fa0;
+            margin-bottom: 20px;
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .related-links a {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-decoration: none;
+            color: #4a3458;
+            font-weight: 500;
+            box-shadow: 0 2px 12px rgba(107, 47, 160, 0.06);
+            transition: transform 0.2s;
+        }
+        .related-links a:hover { transform: translateY(-2px); }
+        .related-links a span { display: block; font-size: 0.85rem; color: #9a7baa; margin-top: 4px; font-weight: 400; }
+        
+        /* Footer */
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            background: #2d2035;
+            color: #c4b0d0;
+        }
+        footer a { color: #d4b8e8; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        footer a:hover { color: white; }
+        .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: white; margin-bottom: 16px; }
+        .footer-copy { margin-top: 24px; font-size: 0.8rem; color: #8a7494; }
+        
+        @media (max-width: 600px) {
+            .article-hero h1 { font-size: 2rem; }
+            .article-content h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav><a href="/">GlowKit</a></nav>
+
+    <section class="article-hero">
+        <h1>How to Build a Skincare Routine</h1>
+        <p class="subtitle">A step-by-step guide to creating a skincare routine that actually works — no matter your skin type, budget, or experience level.</p>
+    </section>
+
+    <article class="article-content">
+        <p>Building a skincare routine doesn't have to be complicated. Whether you're starting from zero or trying to streamline a chaotic collection of products, the fundamentals are the same: cleanse, treat, moisturize, protect.</p>
+
+        <p>The hard part isn't knowing what to do — it's actually doing it consistently. That's where most people fail, and that's why tracking your routine matters just as much as choosing the right products.</p>
+
+        <h2>The 5 Essential Steps of Any Skincare Routine</h2>
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Cleanser</h3>
+            <p>Every skincare routine starts with clean skin. Use a gentle cleanser suited to your skin type — gel cleansers for oily skin, cream or milk cleansers for dry skin, and micellar water if you prefer something ultra-light. Cleanse morning and evening.</p>
+            <p><strong>Pro tip:</strong> If you wear makeup or sunscreen, double cleanse in the evening. Start with an oil-based cleanser to dissolve product, then follow with your regular cleanser.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Toner or Essence</h3>
+            <p>Toners aren't the harsh, alcohol-soaked products your mum used in the 90s. Modern toners are hydrating, pH-balancing, and prep your skin to absorb everything that comes next. Look for hydrating ingredients like hyaluronic acid, niacinamide, or centella asiatica.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Serum or Treatment</h3>
+            <p>This is where you target specific concerns. Vitamin C for brightening, retinol for anti-aging, salicylic acid for acne, niacinamide for pore size and oil control. Start with one serum and build from there.</p>
+            <p><strong>Important:</strong> Don't mix active ingredients randomly. Retinol and vitamin C, for example, should generally be used at different times of day.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Moisturizer</h3>
+            <p>Every skin type needs moisture — yes, even oily skin. A good moisturizer locks in hydration and creates a protective barrier. Gel moisturizers work well for oily skin, while richer creams suit dry or mature skin types.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Sunscreen (Morning Only)</h3>
+            <p>SPF is non-negotiable. UV damage is the number one cause of premature skin aging, and it happens even on cloudy days. Use a broad-spectrum SPF 30+ every single morning, rain or shine. This is the single most impactful step in your entire routine.</p>
+        </div>
+
+        <h2>How to Choose Products for Your Skin Type</h2>
+
+        <h3>Oily Skin</h3>
+        <p>Look for lightweight, non-comedogenic formulas. Gel cleansers, water-based serums, and oil-free moisturizers are your friends. Niacinamide and salicylic acid are great active ingredients for managing oil and keeping pores clear.</p>
+
+        <h3>Dry Skin</h3>
+        <p>Prioritize hydration at every step. Cream cleansers, hyaluronic acid serums, and rich moisturizers with ceramides will help rebuild your moisture barrier. Avoid foaming cleansers — they can strip already-dry skin.</p>
+
+        <h3>Combination Skin</h3>
+        <p>You might need to adjust your approach by zone. A lighter moisturizer for your T-zone and a richer one for your cheeks can work wonders. Gel-cream hybrid moisturizers are often the easiest single-product solution.</p>
+
+        <h3>Sensitive Skin</h3>
+        <p>Keep it simple. Fragrance-free, minimal-ingredient products are key. Introduce new products one at a time, waiting at least two weeks between additions to identify any reactions. Centella asiatica and aloe vera are gentle, soothing ingredients to look for.</p>
+
+        <h2>The Secret Ingredient: Consistency</h2>
+
+        <p>The best skincare routine in the world won't help if you only do it when you remember. Skincare is a long game — most products need 4-8 weeks of consistent use before you see real results. That means building the habit matters more than finding the perfect product.</p>
+
+        <p>This is exactly why we built <a href="/">GlowKit</a>. It's a daily routine tracker designed to help you stay consistent with your skincare (and other self-care habits). You build your custom routine, check off each step daily, and watch your <a href="/glow-score.html">Glow Score</a> rise as you build consistency over time.</p>
+
+        <p>There's something genuinely motivating about seeing a streak grow. It turns skincare from a chore into a game — and that shift in mindset is what separates people who "try skincare" from people who actually see results.</p>
+
+        <h2>Common Mistakes to Avoid</h2>
+
+        <ul>
+            <li><strong>Using too many products at once.</strong> Start with the basics and add one new product at a time.</li>
+            <li><strong>Skipping sunscreen.</strong> Seriously. We can't stress this enough.</li>
+            <li><strong>Expecting overnight results.</strong> Give products at least 4-6 weeks before deciding if they work.</li>
+            <li><strong>Over-exfoliating.</strong> Chemical exfoliants are powerful — 2-3 times per week is usually plenty.</li>
+            <li><strong>Ignoring your neck.</strong> Your routine should extend below your jawline.</li>
+            <li><strong>Changing your entire routine at once.</strong> If something goes wrong, you won't know which product caused it.</li>
+        </ul>
+
+        <h2>Building Your Routine: A Quick Start Plan</h2>
+
+        <p>If you're starting from scratch, here's a simple 4-week plan:</p>
+
+        <ol>
+            <li><strong>Week 1:</strong> Cleanser + moisturizer, morning and night. Get the basic habit down.</li>
+            <li><strong>Week 2:</strong> Add sunscreen to your morning routine.</li>
+            <li><strong>Week 3:</strong> Introduce one treatment serum (vitamin C in the morning or retinol at night).</li>
+            <li><strong>Week 4:</strong> Add a toner if your skin feels like it needs more hydration.</li>
+        </ol>
+
+        <p>Track each step daily with a <a href="/skincare-routine-tracker.html">skincare routine tracker</a> to make sure you're staying consistent. The data you build over time becomes incredibly valuable — you can look back and see exactly when your skin started improving and what changed.</p>
+    </article>
+
+    <section class="related-articles">
+        <h2>Keep Reading</h2>
+        <div class="related-links">
+            <a href="/morning-skincare-routine.html">The Perfect Morning Skincare Routine <span>Step-by-step AM routine →</span></a>
+            <a href="/best-skincare-routine-for-beginners.html">Skincare Routine for Beginners <span>Start here if you're new →</span></a>
+            <a href="/skincare-routine-tracker.html">Why You Need a Routine Tracker <span>Build consistency →</span></a>
+            <a href="/glow-score.html">What is Glow Score? <span>Track your skin health →</span></a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to build your routine?</h2>
+        <p>GlowKit helps you track your skincare routine daily, build streaks, and watch your Glow Score rise. Free to download.</p>
+        <a href="#" class="cta-button">Download GlowKit</a>
+    </section>
+
+    <footer>
+        <div class="footer-brand">GlowKit</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/support.html">Support</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 GlowKit. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Glow Score? Track Your Skin Health — GlowKit</title>
+    <meta name="description" content="Glow Score is your personal skin health and consistency metric. Learn how it works, what affects it, and how tracking your daily skincare habits improves your skin over time.">
+    <meta property="og:title" content="What is Glow Score? Track Your Skin Health — GlowKit">
+    <meta property="og:description" content="Your Glow Score measures skincare consistency. Learn how daily routine tracking translates into real skin health improvements.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://myglowkit.app/glow-score.html">
+    <link rel="canonical" href="https://myglowkit.app/glow-score.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2d2035; background: #faf8fc; overflow-x: hidden; }
+        nav { padding: 20px 24px; background: linear-gradient(160deg, #e8d5f5 0%, #f5d5e0 40%, #fce4ec 100%); text-align: center; }
+        nav a { color: #6b2fa0; text-decoration: none; font-family: 'DM Serif Display', serif; font-size: 1.5rem; }
+        .article-hero { padding: 80px 24px 60px; background: linear-gradient(160deg, #e8d5f5 0%, #f5d5e0 40%, #fce4ec 100%); text-align: center; position: relative; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 50%); pointer-events: none; }
+        .article-hero h1 { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: #6b2fa0; margin-bottom: 16px; position: relative; z-index: 1; }
+        .article-hero .subtitle { font-size: 1.15rem; color: #7a4d8f; max-width: 560px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.6; }
+        .article-content { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .article-content h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #6b2fa0; margin: 48px 0 16px; }
+        .article-content h3 { font-size: 1.2rem; font-weight: 600; color: #4a3458; margin: 32px 0 12px; }
+        .article-content p { font-size: 1.05rem; line-height: 1.8; color: #4a3458; margin-bottom: 20px; }
+        .article-content ul, .article-content ol { margin: 0 0 20px 24px; color: #4a3458; font-size: 1.05rem; line-height: 1.8; }
+        .article-content a { color: #9b59b6; text-decoration: underline; }
+        .article-content a:hover { color: #6b2fa0; }
+        .score-visual { text-align: center; padding: 48px 24px; margin: 32px 0; }
+        .score-circle { display: inline-flex; align-items: center; justify-content: center; width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, #9b59b6, #e07098); color: white; font-family: 'DM Serif Display', serif; font-size: 3.5rem; box-shadow: 0 8px 32px rgba(155, 89, 182, 0.3); }
+        .score-label { display: block; margin-top: 16px; font-size: 1.1rem; color: #7a4d8f; font-weight: 500; }
+        .tier-card { background: white; border-radius: 20px; padding: 24px 28px; margin: 16px 0; box-shadow: 0 2px 16px rgba(107, 47, 160, 0.06); display: flex; align-items: flex-start; gap: 20px; }
+        .tier-badge { flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: white; }
+        .tier-badge.bronze { background: linear-gradient(135deg, #cd7f32, #a0522d); }
+        .tier-badge.silver { background: linear-gradient(135deg, #c0c0c0, #808080); }
+        .tier-badge.gold { background: linear-gradient(135deg, #ffd700, #daa520); }
+        .tier-badge.diamond { background: linear-gradient(135deg, #b9f2ff, #00bcd4); }
+        .tier-info h3 { margin: 0 0 6px; }
+        .tier-info p { margin: 0; font-size: 0.95rem; }
+        .tip-box { background: linear-gradient(135deg, #f3e8fa, #fce4ec); border-radius: 16px; padding: 24px; margin: 24px 0; border-left: 4px solid #9b59b6; }
+        .tip-box strong { color: #6b2fa0; }
+        .cta-section { padding: 80px 24px; background: linear-gradient(160deg, #f3e8fa 0%, #fce4ec 100%); text-align: center; }
+        .cta-section h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #6b2fa0; margin-bottom: 16px; }
+        .cta-section p { font-size: 1.05rem; color: #7a4d8f; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-button { display: inline-block; padding: 16px 48px; background: linear-gradient(135deg, #9b59b6, #e07098); color: white; text-decoration: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(155, 89, 182, 0.45); }
+        .related-articles { max-width: 720px; margin: 0 auto; padding: 0 24px 60px; }
+        .related-articles h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #6b2fa0; margin-bottom: 20px; }
+        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .related-links a { background: white; border-radius: 16px; padding: 20px; text-decoration: none; color: #4a3458; font-weight: 500; box-shadow: 0 2px 12px rgba(107, 47, 160, 0.06); transition: transform 0.2s; }
+        .related-links a:hover { transform: translateY(-2px); }
+        .related-links a span { display: block; font-size: 0.85rem; color: #9a7baa; margin-top: 4px; font-weight: 400; }
+        footer { padding: 48px 24px; text-align: center; background: #2d2035; color: #c4b0d0; }
+        footer a { color: #d4b8e8; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        footer a:hover { color: white; }
+        .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: white; margin-bottom: 16px; }
+        .footer-copy { margin-top: 24px; font-size: 0.8rem; color: #8a7494; }
+        @media (max-width: 600px) { .article-hero h1 { font-size: 2rem; } .article-content h2 { font-size: 1.5rem; } .score-circle { width: 120px; height: 120px; font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <nav><a href="/">GlowKit</a></nav>
+
+    <section class="article-hero">
+        <h1>What is Glow Score?</h1>
+        <p class="subtitle">Your personal skin health metric. Glow Score tracks how consistently you follow your routines — because consistency is the real secret to great skin.</p>
+    </section>
+
+    <article class="article-content">
+        <div class="score-visual">
+            <div class="score-circle">87</div>
+            <span class="score-label">Example Glow Score</span>
+        </div>
+
+        <p>We all know the feeling: you buy a new serum, use it religiously for a week, then forget about it for three days, then use it twice, then it ends up in the back of your cabinet. Sound familiar?</p>
+
+        <p>Glow Score was designed to solve this problem. It's a simple, visual metric inside <a href="/">GlowKit</a> that reflects one thing: how consistently you're completing your daily routines. The higher your Glow Score, the more consistent you've been — and the more likely you are to see real results from your skincare.</p>
+
+        <h2>How Glow Score Works</h2>
+
+        <p>Your Glow Score is calculated based on several factors:</p>
+
+        <ul>
+            <li><strong>Daily completion rate:</strong> What percentage of your routine steps did you complete today?</li>
+            <li><strong>Streak length:</strong> How many consecutive days have you completed your routine?</li>
+            <li><strong>Weekly consistency:</strong> How many days out of the last 7 did you show up?</li>
+            <li><strong>Routine diversity:</strong> Are you completing all your routines (morning, evening, etc.) or just one?</li>
+        </ul>
+
+        <p>The score is weighted toward recent activity — so a bad week three months ago won't drag down your current score. What matters is what you're doing now.</p>
+
+        <h2>Glow Score Tiers</h2>
+
+        <div class="tier-card">
+            <div class="tier-badge bronze">B</div>
+            <div class="tier-info">
+                <h3>Bronze: 0-39</h3>
+                <p>You're just getting started, or you've been inconsistent recently. No judgment — the important thing is that you're here. Focus on completing your routine at least 3 days this week.</p>
+            </div>
+        </div>
+
+        <div class="tier-card">
+            <div class="tier-badge silver">S</div>
+            <div class="tier-info">
+                <h3>Silver: 40-69</h3>
+                <p>You're building momentum. You're showing up more often than not, and your skin is starting to notice. Keep pushing toward consistency — the habit is forming.</p>
+            </div>
+        </div>
+
+        <div class="tier-card">
+            <div class="tier-badge gold">G</div>
+            <div class="tier-info">
+                <h3>Gold: 70-89</h3>
+                <p>You're in the zone. Your routine is becoming second nature, and you're consistent enough to actually evaluate what's working. This is where real skin improvements happen.</p>
+            </div>
+        </div>
+
+        <div class="tier-card">
+            <div class="tier-badge diamond">✦</div>
+            <div class="tier-info">
+                <h3>Diamond: 90-100</h3>
+                <p>You're a skincare machine. Your consistency is exceptional, and your skin is absolutely benefiting from it. You've built a true habit — keep glowing.</p>
+            </div>
+        </div>
+
+        <h2>Why Consistency Matters More Than Products</h2>
+
+        <p>Here's a truth the skincare industry doesn't love to admit: a basic routine done consistently will always outperform an expensive routine done sporadically.</p>
+
+        <p>Studies on skincare efficacy consistently show that the biggest variable in outcomes isn't the specific product — it's adherence. A $12 vitamin C serum used every day for 8 weeks will outperform a $80 serum used 3 times a week for 8 weeks.</p>
+
+        <p>That's the whole philosophy behind Glow Score. It doesn't care how expensive your products are or how many steps your routine has. It cares about one thing: did you show up today?</p>
+
+        <h2>How to Raise Your Glow Score</h2>
+
+        <ol>
+            <li><strong>Start small.</strong> A 3-step routine done daily beats a 10-step routine done occasionally. If your current routine feels overwhelming, <a href="/best-skincare-routine-for-beginners.html">simplify it</a>.</li>
+            <li><strong>Set a reminder.</strong> GlowKit has built-in reminders, but even a phone alarm works. Link your routine to an existing habit — after brushing your teeth, for example.</li>
+            <li><strong>Don't skip weekends.</strong> Consistency means every day, not just weekdays. Your skin doesn't know what day it is.</li>
+            <li><strong>Use streak saves wisely.</strong> GlowKit Premium includes streak saves for those days when life genuinely gets in the way. Use them sparingly.</li>
+            <li><strong>Track both morning and evening.</strong> Completing both routines gives a bigger boost to your Glow Score than doing only one.</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>📈 Fun fact:</strong> GlowKit users who maintain a Gold-tier Glow Score (70+) for 30 consecutive days report feeling significantly more confident about their skin — even before visible changes appear. The act of consistently caring for yourself has psychological benefits that go beyond skin deep.
+        </div>
+
+        <h2>Glow Score vs. Other Health Metrics</h2>
+
+        <p>Think of Glow Score like a step counter for your skincare. A step counter doesn't make you healthier — but the awareness and motivation it creates absolutely does. Glow Score works the same way. It turns an invisible habit (skincare consistency) into something visible, measurable, and motivating.</p>
+
+        <p>Unlike metrics that require external devices, Glow Score is entirely self-reported. You check off your routine steps, and the score reflects your consistency. Simple, honest, and surprisingly powerful.</p>
+
+        <h2>The Science of Habit Tracking</h2>
+
+        <p>Research from University College London found that it takes an average of 66 days for a new behavior to become automatic. But here's the key finding: missing a single day didn't significantly impact long-term habit formation. What mattered was the overall pattern of consistency.</p>
+
+        <p>This is exactly how Glow Score is designed. It's forgiving of the occasional missed day but rewards sustained effort over time. It's not about perfection — it's about showing up more often than not.</p>
+    </article>
+
+    <section class="related-articles">
+        <h2>Keep Reading</h2>
+        <div class="related-links">
+            <a href="/skincare-routine-guide.html">How to Build a Skincare Routine <span>Complete guide →</span></a>
+            <a href="/skincare-routine-tracker.html">Why Track Your Routine? <span>The case for tracking →</span></a>
+            <a href="/morning-skincare-routine.html">Morning Skincare Routine <span>Perfect your AM routine →</span></a>
+            <a href="/best-skincare-routine-for-beginners.html">Skincare for Beginners <span>Keep it simple →</span></a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>See your Glow Score</h2>
+        <p>Download GlowKit, build your skincare routine, and start tracking. Your Glow Score awaits.</p>
+        <a href="#" class="cta-button">Download GlowKit</a>
+    </section>
+
+    <footer>
+        <div class="footer-brand">GlowKit</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/support.html">Support</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 GlowKit. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
